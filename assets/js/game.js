@@ -10,24 +10,21 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-//You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
 var enemyNames = ["Roboto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 var fight = function(enemyName) {
-    //Alert users that they are starting the round
-    window.alert("Welcome to Robot Gladiators!");
+    //repeat and execute as long as the enemy robot is alive
+    while(enemyHealth > 0) {
 
-    var promptFight = window.prompt(
-        "Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."
-    );
-    console.log(promptFight);
+        var promptFight = window.prompt(
+            "Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."
+        );
+        console.log(promptFight);
 
-    //if player chooses to fight, then fight
-    if (promptFight === "fight" || promptFight === "FIGHT") {
+        //if player chooses to fight, then fight
+        if (promptFight === "fight" || promptFight === "FIGHT") {
 
         //Subtract the value of 'playerAttack' from the value of 'enemyHealth' and use that result to update the value in the 'enemyHealth' variable
         enemyHealth = enemyHealth - playerAttack;
@@ -80,8 +77,13 @@ var fight = function(enemyName) {
     else {
         window.alert("You need to pick a valid option. Try again!");
     }
+}
 };
 
 for(var i = 0; i < enemyNames.length; i++) {
+    debugger;
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
+    // call fight function with enemy robot
     fight(enemyNames[i]);
 }
