@@ -80,7 +80,6 @@ var fight = function(enemy) {
 var startGame = function () {
     //reset player stats
     playerInfo.reset();
-
     for (var i = 0; i < enemyInfo.length; i++) {
         //check player robot's health status
         if (playerInfo.health > 0) {
@@ -164,9 +163,21 @@ var shop = function () {
     };
 };
 
-//Let player name their robot. Defines points player robot starts with.
+//Let player name their robot. Must enter valid name.
+//function to SET PLAYER ROBOT NAME
+    var getPlayerName = function() {
+        var name = "";
+        while (name === "" || name === null) {
+            name = prompt("What is your robot's name?");
+        }
+        console.log("Your robot's name is " + name);
+        return name;
+    }
+    
+// GAME INFO / VARIABLES
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
