@@ -1,8 +1,8 @@
-# robot-gladiators
+# Robot Gladiators
 
 Robot Gladiators is a browser game written entirely in Javascript.  It's very basic, but allowed me to practice writing functions, defining variables, and getting the hang of for loops and while statements in Javascript. 
 
-## description
+## Description
 
 Through a series of prompts and confirms, the user can choose their Robot's name, and then battle other robots.  The enemy robots names are chosen randomly from their array.  The user can choose to battle, or skip a battle.  In between fighting enemy robots, the user can choose to visit the store to re-up on health or upgrade their attack value. This costs money.  
 
